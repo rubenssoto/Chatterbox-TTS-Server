@@ -5,7 +5,7 @@ services:
     build:
       args:
       # Can be nvidia or cpu; Default is Nvidia
-        - RUNTIME=nvidia
+        - RUNTIME=cpu
       context: .
       dockerfile: Dockerfile
     ports:
@@ -26,14 +26,7 @@ services:
     # If you get a 'CDI device injection failed' error, comment out the 'deploy' section
     # and uncomment the 'runtime: nvidia' line below.
     
-    # Method 1: Modern Docker Compose (Recommended)
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - driver: nvidia
-              count: 1
-              capabilities: [gpu]
+
 
     # Method 2: Legacy Docker Compose (for older setups)
     # runtime: nvidia
