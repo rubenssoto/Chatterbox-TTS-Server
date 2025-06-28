@@ -5,7 +5,7 @@ services:
     build:
       args:
       # Can be nvidia or cpu; Default is Nvidia
-        - RUNTIME=cpu
+        - RUNTIME=nvidia
       context: .
       dockerfile: Dockerfile
     ports:
@@ -31,9 +31,9 @@ services:
       resources:
         reservations:
           devices:
-            - driver: cpu
+            - driver: nvidia
               count: 1
-              capabilities: [cpu]
+              capabilities: [gpu]
 
     # Method 2: Legacy Docker Compose (for older setups)
     # runtime: nvidia
