@@ -5,7 +5,7 @@ services:
     build:
       args:
       # Can be nvidia or cpu; Default is Nvidia
-        - RUNTIME=nvidia
+        - RUNTIME=cpu
       context: .
       dockerfile: Dockerfile
     ports:
