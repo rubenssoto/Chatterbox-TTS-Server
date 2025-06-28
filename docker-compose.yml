@@ -31,9 +31,9 @@ services:
       resources:
         reservations:
           devices:
-            - driver: nvidia
+            - driver: cpu
               count: 1
-              capabilities: [gpu]
+              capabilities: [cpu]
 
     # Method 2: Legacy Docker Compose (for older setups)
     # runtime: nvidia
